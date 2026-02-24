@@ -833,9 +833,8 @@
 
       <div class="section-label">ENUNCIADO</div>
       <div class="enunciado">
-        Uma máquina industrial deve operar entre <strong>60°C e 90°C</strong>.<br><br>
-        Gere aleatoriamente <strong>10 leituras de temperatura</strong> (valores entre 50 e 100°C) e, para cada leitura, informe se está <strong>DENTRO</strong> ou <strong>FORA</strong> do limite seguro de operação.<br><br>
-        No final, exiba o <strong>total de alertas</strong> encontrados.
+        Precisamos monitorar o comportamento térmico de uma máquina industrial cujo intervalo de operação segura está compreendido entre 60°C e 90°C.<br>
+        Para simular esse acompanhamento, desenvolva uma rotina que gere 10 leituras aleatórias de temperatura (considerando uma variação de 50°C a 100°C). Para cada valor obtido, o sistema deve validar se a temperatura está dentro ou fora dos limites de segurança e, ao final, apresentar o balanço total de alertas registrados.
         <div class="concepts">
           <span class="concept-tag">random.uniform()</span>
           <span class="concept-tag">np.array()</span>
@@ -908,8 +907,7 @@
 
       <div class="section-label">ENUNCIADO</div>
       <div class="enunciado">
-        Uma peça tem <strong>espessura inicial de 10mm</strong>. A cada ciclo perde uma quantidade aleatória entre <strong>0.1mm e 0.5mm</strong>.<br><br>
-        Simule até <strong>20 ciclos</strong> de operação e mostre a espessura após cada ciclo. Emita um <strong>⚠️ alerta de troca</strong> quando a espessura cair abaixo de <strong>6mm</strong> e interrompa a simulação.
+        Para avaliar o comportamento de desgaste de um componente com espessura nominal de 10 mm, realizaremos uma simulação de até 20 ciclos operacionais. Estima-se que, a cada ciclo, a peça sofra uma redução dimensional aleatória entre 0,1 mm e 0,5 mm. O monitoramento deve registrar a espessura residual após cada etapa e, caso o valor atinja o limite crítico inferior a 6 mm, o sistema deve interromper a operação e emitir um alerta imediato para a substituição do componente.
         <div class="concepts">
           <span class="concept-tag">random.uniform()</span>
           <span class="concept-tag">while/for + break</span>
@@ -980,9 +978,7 @@
 
       <div class="section-label">ENUNCIADO</div>
       <div class="enunciado">
-        Simule <strong>100 leituras de vibração</strong> de um motor (em mm/s) usando <strong>distribuição normal</strong> (média=5, desvio padrão=2), com valores limitados entre 0 e 15 mm/s.<br><br>
-        Calcule: média, mediana, desvio padrão, mínimo, máximo e o percentual de leituras acima de 10 mm/s (nível crítico).<br><br>
-        Classifique o motor: <strong>BOM</strong> (média &lt; 7) | <strong>ATENÇÃO</strong> (7–10) | <strong>CRÍTICO</strong> (&gt; 10).
+        Com o objetivo de validar a saúde mecânica de um motor, realizaremos uma análise estatística baseada em 100 leituras de vibração (mm/s). Para esta simulação, utilizaremos uma distribuição normal com média de 5 e desvio padrão de 2, garantindo que os valores coletados permaneçam no intervalo físico de 0 a 15 mm/s. A partir desse conjunto de dados, devemos extrair as principais métricas descritivas: média, mediana, desvio padrão e extremos. Além de identificar o percentual de amostras que ultrapassam o limite crítico de 10 mm/s. Por fim, o motor deve ser classificado em um dos três níveis de severidade (Bom, Atenção ou Crítico) com base em sua vibração média.
         <div class="concepts">
           <span class="concept-tag">np.random.normal()</span>
           <span class="concept-tag">np.clip()</span>
@@ -1053,8 +1049,7 @@
 
       <div class="section-label">ENUNCIADO</div>
       <div class="enunciado">
-        Uma fábrica tem <strong>8 máquinas</strong>. Cada máquina deve ser lubrificada a cada <strong>200 horas</strong> de operação. Simule <strong>500 horas</strong> de operação com incrementos aleatórios de 1 a 5h por turno.<br><br>
-        Cada máquina pode ter uma pequena variação de carga (±1h por turno). Registre <strong>quando e quantas vezes</strong> cada máquina foi lubrificada.
+        Para otimizar a disponibilidade de uma célula de fabricação composta por 8 máquinas, realizaremos uma simulação de 500 horas de operação contínua. O protocolo de manutenção preditiva estabelece que cada ativo deve ser lubrificado rigorosamente a cada 200 horas de funcionamento acumulado. Durante a simulação, o avanço do horímetro por turno deve variar aleatoriamente entre 1 e 5 horas, considerando ainda uma oscilação de carga de ±1 hora por máquina para refletir condições reais de uso. O sistema deve registrar o histórico de intervenções, detalhando o momento exato e a frequência total de lubrificações realizadas em cada equipamento.
         <div class="concepts">
           <span class="concept-tag">np.zeros()</span>
           <span class="concept-tag">random.randint()</span>
@@ -1127,8 +1122,7 @@
 
       <div class="section-label">ENUNCIADO</div>
       <div class="enunciado">
-        Uma planta tem <strong>50 máquinas</strong>. Cada máquina tem um nível de desgaste inicial aleatório entre <strong>0% e 30%</strong>. Cada dia, o desgaste aumenta um valor aleatório entre <strong>0,5% e 2,5%</strong>. Se o desgaste superar <strong>80%</strong>, a máquina entra em falha.<br><br>
-        Simule <strong>90 dias de operação</strong> e reporte: quantas máquinas falharam, em que dia cada uma falhou, e qual foi a <strong>média de vida útil</strong> das máquinas que falharam.
+        Avaliar a resiliência de um parque fabril composto por 50 ativos, realizaremos uma simulação de desgaste acelerado ao longo de um trimestre operacional (90 dias). Consideraremos que cada máquina inicia o período com uma degradação residual aleatória entre 0% e 30%. O modelo deve projetar um incremento diário de desgaste variando de 0,5% a 2,5%, estabelecendo o limite crítico de falha funcional em 80%. Ao final da simulação, o relatório deve consolidar o volume total de interrupções, a cronologia exata de cada sinistro e o tempo médio de operação (Mean Time to Failure - MTTF) das máquinas que atingiram o estado de falha.
         <div class="concepts">
           <span class="concept-tag">random.uniform()</span>
           <span class="concept-tag">dicionários</span>
@@ -1200,10 +1194,7 @@
 
       <div class="section-label">ENUNCIADO</div>
       <div class="enunciado">
-        Um técnico recebe <strong>20 ordens de trabalho</strong> no início da semana. Cada ordem tem uma <strong>criticidade</strong> (1–10), um <strong>tempo estimado</strong> em horas (0,5h a 8h) e um <strong>percentual de avanço</strong> já concluído (0% a 60%).<br><br>
-        Calcule o índice de prioridade com a fórmula:<br><br>
-        <code style="background:rgba(0,0,0,0.3);padding:6px 12px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent2);">prioridade = criticidade × (1 − avanco) / tempo_estimado</code><br><br>
-        Ordene as ordens, identifique quais entram no <strong>turno do dia (8h disponíveis)</strong>, tomando as de maior prioridade até esgotar o tempo, e calcule o <strong>avanço médio ponderado</strong> do turno.
+        No início de cada ciclo semanal, um técnico de manutenção assume uma carteira de ordens pendentes de 20 ordens de trabalho (OTs), cada uma com diferentes níveis de criticidade (1 a 10), durações estimadas (0,5h a 8h) e estágios de execução variando de 0% a 60%. Para otimizar o fluxo de trabalho, utilizaremos um índice de prioridade que pondera a relevância do ativo e o trabalho remanescente frente ao tempo necessário para conclusão. Com base nessa hierarquização, o desafio consiste em selecionar as atividades que comporão o cronograma de um turno de 8 horas, priorizando as tarefas de maior impacto e calculando, ao final, o avanço médio ponderado das ordens selecionadas.
         <div class="concepts">
           <span class="concept-tag">random.uniform() / randint()</span>
           <span class="concept-tag">sorted() com key=</span>
